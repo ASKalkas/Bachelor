@@ -1,0 +1,513 @@
+**Discovering NX**
+
+To begin learning NX, select the Welcome role.
+
+As you explore, discover how to:
+-Design part models using good associative modeling practices.
+-Use features efficiently to create models that are easy to edit.
+-Create an assembly of parts.
+-Create a drawing to document the design.
+
+**Matching the NX interface to your job role**
+
+Choose a role from the Roles tab on the Resource bar to select an interface layout and other options.
+Select the Welcome role as you learn NX.
+
+**Selecting NX applications**
+
+When you open a saved file or create a new file from a template, NX will automatically start the application in which the file was last saved, or the application for the template.
+You can switch NX applications from the Application tab on the Ribbon bar or from the Start group on the File menu.
+Create a new file and select the Model template to start the Modeling application. Other applications will also be used in the design process.
+
+**Accessing navigators and palettes**
+
+Use the Resource bar tabs to access navigators and palettes.
+
+The following are tabs that you are likely to use frequently:
+-Assembly Navigator: Display and edit the structure of assemblies.
+-Part Navigator: Display and edit the model history.
+-Web Browser: View Help videos.
+-History: Open recently accessed parts and assemblies.
+-Roles: Select a role-based interface layout.
+
+**Accessing commands**
+
+Access NX commands on the Ribbon bar or by right-clicking in navigators and in the graphics window.
+-Ribbon bar: The Ribbon bar organizes commands in each application into tabs and groups.
+-Navigators: Right-click an object listed in a navigator to access a shortcut menu.
+-Graphics window: Right-click an object in the graphics window, or right-click in the background of the graphics window to access context-specific shortcut menus.
+
+**Searching for commands**
+
+Enter a term or a phrase in the Search box in the top right corner of the Ribbon bar to find commands in the NX software.
+
+From the Search window, you can:
+-Learn the location of commands on the Ribbon bar.
+-Learn about similar commands.
+-Start the command.
+-Show the command on the Ribbon bar, if it is currently hidden.
+-Access Help on the command. For many commands, find videos showing different uses of the command in the Web Browser tab.
+
+**Interacting with commands**
+
+NX dialog boxes provide feedback and guide you through the steps of each command.
+
+Dialog box groups:
+-Dialog boxes are organized into expanding and collapsing groups. You generally work from the top down.
+-Click in a dialog box group to complete that step next. The current option prompting you to select an object is highlighted in orange.
+-A red asterisk indicates that object selection is required.
+-A green check mark indicates items that object selection is complete. The number of selected objects provides additional feedback.
+
+Common dialog box options:
+-Click the Reset button to reset dialog boxes to their default values.
+-Click Dialog Options Dialog button to show or hide collapsed groups.
+-Type values in the boxes or drag the handles in the graphics window to change parameters.
+-Use the pull-down arrows for other options.
+-When all inputs are supplied, the OK and Apply confirmation buttons are available.
+
+**Orienting your view**
+
+To change the view orientation, right-click in the background of the graphics window and choose Orient View. Then choose one of the standard view options.
+Viewing commands are also available on the View tab on the ribbon.
+3D input devices are the most direct way to dynamically rotate, pan, and zoom. You can rotate the model with one hand and select objects using the mouse with the other hand.
+
+If you don't have a 3D input device use these mouse button combinations to dynamically orient the display:
+-Rotate: Middle mouse button
+-Pan: Middle mouse button + Right mouse button -or- Shift + Middle mouse button
+-Zoom: Mouse scroll wheel
+
+**Changing your model display**
+
+To change the display style, right-click in the background of the graphics window and choose Display Style.
+
+Display styles include:
+-Shaded (Default)
+-Wireframe
+-Studio
+
+**Simplifying the display**
+
+Hide objects to simplify the display.
+Use the Show and Hide command on the View tab to hide all objects of a given type, for example to hide all sketches.
+
+**Part modeling**
+
+Before you model parts, you should plan a strategy for what features to use, and in what order. The goal is to create models with useful feature associativity that are easy to understand and edit.
+
+**Part modeling strategy**
+
+Plan your part modeling strategy. Creating features in a logical order creates useful associativity to make models easier to understand and edit.
+
+This feature order was used for the parts in a drill press base:
+1. Create the basic shapes.
+2. Add shell and draft features.
+3. Add design details.
+4. Create holes for fasteners.
+5. Add final cosmetic edge blends and chamfers.
+
+**Starting with datums**
+
+When you create a new part by selecting the Model template, it will already contain a datum coordinate system as the first feature.
+Use the datum coordinate system as a foundation to position other features.
+
+**Sketching basic geometry**
+
+Create sketches to define the sections to extrude or revolve to create the basic shapes of the model.
+
+Sketches consist of curves, dimensions, and constraints on a plane.
+-Initially, sketch geometry to capture the basic shape. Use the commands Profile, Circle, and Rectangle to create basic shapes.
+-Next, add dimensions to drive the sketch to the correct size.
+-Where necessary, add constraints so that the sketch will behave properly when you edit the dimensions. This is called design intent.
+-To use curves as construction geometry that are not part of the extruded or revolved shape, convert them to reference curves. A reference line is used in the sketch above to align the shape with the datum coordinate system.
+
+**Creating extruded features**
+
+Use the Extrude command to create the solid shapes in the model.
+
+With the Extrude command, pay attention to these options:
+-Section: In many cases, you extrude the entire sketch as the section. You can also extrude just portions of a sketch by using different options for the Curve Rule. For example, use Region Boundary Curves to select closed regions from a sketch.
+Find the Curve Rule options on the Ribbon bar in the Selection tab, or right-click in the graphics window.
+-Limits: Start and end limits can be a distance value, or you can select surfaces to terminate the extrusion.
+-Boolean: You can add or subtract the extruded shape from other shapes in the model. You can also choose a Boolean value of None, and then use specific Boolean commands, which provide more options.
+
+**Creating revolved features**
+
+Use the Revolve command to create basic shapes by revolving a sketch around an axis.
+The main difference between a revolve and an extrude is that with a revolve you select an axis of revolution.
+The basic shape of a drill press column support is created with a revolve command.
+
+**Using Boolean operations**
+
+The Boolean commands commands Unite and Subtract give you more options than using the Boolean options within the Extrude and Revolve commands.
+In the design of a drill press table support, the Unite command is used, along with the Define Regions option. Only the external region is united to the model, not the region inside the hollow tube.
+
+**Creating thin-walled parts**
+
+Use the Shell command to create a thin-walled part from a solid body by removing selected faces and adding thickness to others.
+The Shell command is used to hollow out the bottom of a drill press table with a thickness of 3 mm.
+In a drill press model, the Shell command is also used to hollow out the stamped sheet metal base.
+In both cases, the basic shape was created before the Shell command. Other features were created after.
+
+**Adding design details**
+
+After creating the basic shape of the model; using the Shell command to create a thin-walled part; and the Draft command to add draft angles to faces; next add design details. These features may add or remove material. They may also require drafted faces.
+These are some of the details applied to the parts in a drill press base assembly. These include slots, bosses and cutouts.
+Create many of these features using the Extrude command using the Boolean option Unite or Subtract.
+
+**Mirroring features**
+
+Use the Mirror Feature command to reflect features across a datum plane.
+
+**Creating hole features**
+
+Use the Hole command to create holes for fasteners. You can select from ISO or ANSI standard hole sizes. Holes can be threaded or clearance holes. The form of the hole can be simple, countersunk, or counterbored.
+For these holes, it is convenient to select the centers of the bosses. For more complicated hole patterns, create a sketch containing points to define hole locations.
+
+**Patterning features**
+
+Use the Pattern Feature command to create a rectangular or circular array of features.
+In the drill press column support, one hole was created and then used to create a circular pattern of holes around the Z axis.
+To create a pattern, you will enter any two of the values of the count, the pitch, and the total span.
+
+**Understanding model history in the Part Navigator**
+
+View the history of a model in the Part Navigator:
+-Each feature in the model is listed in the Part Navigator.
+-Feature types are indicated by an icon next to the name.
+-NX highlights selected features both in the Part Navigator and the graphics window.
+
+**NX applications**
+
+Design and analyze products using integrated applications in NX.
+
+NX applications include:
+-Modeling
+-PMI (Product and Manufacturing Information)
+-Drafting
+-Sheet Metal
+-Assemblies
+-Design Simulation
+-Additive Manufacturing
+-Manufacturing
+
+Start NX applications from the Application tab on the Ribbon bar or from the Start group on the File tab.
+
+**Using the Modeling application**
+
+Use the Modeling application to create and edit part geometry. You will often design product assemblies by first modeling the individual parts.
+
+**Using the Assemblies application**
+
+Use the Assemblies application to create a product assembly.
+
+When you turn on the Assemblies application, NX adds the Assemblies tab to the Ribbon bar in the Modeling application.
+
+-Use the Assembly Navigator on the Resource bar to display and manipulate the hierarchical structure of an assembly.
+-Start an empty assembly by creating a new file using the Assembly template.
+-Use the Add Component command to create an assembly from the bottom up by adding existing models as components to an assembly.
+-Use the Move Component command to position assembly components, or the Assembly Constraints command to constrain components in position.
+-To edit a specific part in an assembly, make it the work part by double-clicking it in the Assembly Navigator.
+
+**Using the PMI application**
+
+Use the PMI (Product and Manufacturing Information) application to add 3D annotation to the model.
+When you select the PMI application, NX adds the PMI tab to the Ribbon bar in the Modeling application.
+Create PMI with an appropriate Model View active. The PMI is aligned with that view by default, and stored with that view. In this case, the Model Views were named with a prefix MBD to indicate that they are part of the Model-Based Definition.
+
+**Using the Drafting application**
+
+Use the Drafting application to create 2D documentation of the final design.
+
+To create a drawing, choose the New command and select the Drawing tab. Select one of the templates. Provide:
+-A folder name to store the drawing.
+-The name of the new drawing.
+-The name of the part or assembly you are creating the drawing of.
+
+Access most Drafting commands by right-clicking in the Drawing node in the Part Navigator or on the border of views.
+-To add base views to the sheet, right-click the sheet in the Part Navigator and choose Add Base View.
+-To add section and detail views, right-click a view border and choose one of the view types.
+-Use the commands on the Ribbon bar to add annotation and dimensions.
+
+**Using the Manufacturing application**
+
+Use the Manufacturing application to create NC (Numerical Control) tool paths.
+In NX Manufacturing, you create a sequence of operations to machine the part. Each operation machines selected geometry using a specific machining method and a tool.
+Use the Operation Navigator to create and manage an NC program containing a sequence of machining operations. View the information in the Operation Navigator using different hierarchical views.
+
+Right click in the Operation Navigator to choose one of four views:
+-Program Order View: Use this view to manage the operations in program order.
+-Machine Tool View: Use this view to manage your machining tools.
+-Geometry View: Use this view to specify the features on the part to be machined.
+-Machining Method View: Use this view to edit machining parameters, such as feeds, speeds, and tolerances.
+
+**Using the Design Simulation application**
+
+Use the Design Simulation and Pre/Post applications to compute structural deformation and stress on a finite element model.
+Design Simulation is used to analyze stress and deformation in the drill press table.
+The display indicates where ribs could be added to stiffen and strengthen the table.
+
+The basic analysis steps are:
+-Assign a material.
+-Choose an element type and mesh the model.
+-Apply loads and constraints.
+-Solve the model.
+-Display the results.
+
+**NX Manufacturing templates**
+
+Templates contain pre-set options and dialog box layouts that are customized for specific tasks. Manufacturing contains setup templates, group templates, and operation templates.
+The setup template defines the available Type options and groups that initially appear in the Operation Navigator, the Create Operation dialog box, and the Create Group dialog boxes.
+You must specify the setup template when you enter the Manufacturing application for the very first time with any part. After that, the setup template is always associated with the part.
+In the Create Geometry, Create Program, Create Method, Create Operation, and Create Tool dialog boxes, the Type list displays the available group templates.
+In the Create Operation dialog box, the Operation Subtype group displays the available operation templates.
+
+**CAM and NX assemblies — setups, machines, tools, and devices**
+When you create a native NX CAM setup, we recommend that you use the master model concept, as described under Quick Links the link at the right side of this page.
+When you add tools, devices, or a machine tool assembly, to your setup, NX uses the assemblies concept to keep track of files that should be displayed with your part. The files are treated like assembly components.
+As a CAM user, you do not need to complete assemblies training to use this largely automatic functionality. You do need to be aware of some assemblies basics.
+
+*Assembly Load Options*
+When native NX opens a part that has components, the components are found by one of the following methods:
+From Folder
+As Saved
+From Search Folders
+The default option is From Folder. If you do not change this default, NX does not initially find machine tool assemblies, and sometimes it does not find tools or devices. You may see warning messages that relate this information.
+You can accept these warnings when they appear.
+
+*Opening your CAM setup after it was saved and closed*
+When you open a CAM setup part, when NX Manufacturing starts, it automatically searches the folders that are represented by the following variables:
+UGII_CAM_LIBRARY_INSTALLED_MACHINES_DIR
+UGII_CAM_LIBRARY_TOOL_DIR
+UGII_CAM_LIBRARY_DEVICE_DIR
+Because of this additional search, after you acknowledge the warning, your machine tool and other tools and devices are displayed.
+
+**Operation dialog box layout**
+
+*Geometry group*
+ Selects previously defined geometry parent that controls inherited geometry.
+ Creates a new geometry parent for this operation.
+ Edits the geometry selections in a previously defined parent group.
+
+*Tool group*
+Tool: Selects a previously defined tool from the Operation Navigator.
+Create New: Creates a new tool definition for the current operation and places it in the Machine Tool View of the Operation Navigator for use by other operations.
+Edit or Display: Displays the current tool and a dialog box of the tool's parameters.
+Select Tracking: Accesses options to define tracking points for the tool. A tracking point is a reference point on the tool used to calculate tool paths.
+Output: Displays the current parameters for Tool Number, Adjust, Cutcom, and Z Offset and their related inheritance status.
+Tool Change Settings: Displays the current settings for the Manual Tool Change and Text Status. It also displays the Holder Number and Inheritance status.
+
+*Path Settings group*
+Create New: Lets you create a new Method group for this operation and place it in the Machining Method View of the Operation Navigator for use by other operations. For example: Roughing or Finishing.
+Edit: Lets you edit the selected Method definition.
+Cutting Parameters: Lets you control settings that are common to the cutting operation subtypes. This includes tolerances, cutter clearance angles, minimum clearance, contour types, cut constraints and cut control.
+Non Cutting Moves: Specifies movements that position the tool before, after, and between cutting moves.
+Feeds and Speeds: Specifies spindle speeds and feed rates. Sets the rate at which the tool advances. You can inherit the value of the feed parameters from the Method group. Set Speeds on the Feed Rate dialog. Feed Rates.
+
+*Program group*
+
+Program: Specifies the program to place the operation in.
+Create New: Creates a new program and places it in the Program View of the Operation Navigator. For example, you could create a program called TAPE2 or O1234 to use for postprocessing.
+Edit: Modifies the selected program.
+
+*Layout and Layer*
+Lets you save the geometry for the operation on a separate layer.
+
+*Options group*
+Edit Display: Controls the tool path display options such as color and type of tool display.
+Customize Dialog: Specifies the parameters (text fields, buttons, and option menus) that appear in the dialog.
+
+*Actions group*
+Generate: Generates the tool path.
+Replay: Refreshes the graphics window and replays the tool path.
+Verify: Provides options for animating the tool path.
+List: Displays a text listing of the tool path in an Information window.
+
+**Analysis and information commands for Manufacturing parts**
+
+There are different commands to find the different types of part information for Manufacturing.
+
+*Tool criteria such as lengths, diameters, corner radii, and taper angles.*
+Analyze the part with NC Assistant.
+Menu -> Analysis -> NC Assistant
+
+*Distance between part walls and clamps or fixtures.*
+Measure the distance.
+Analysis tab -> Measure Distance
+
+*Parameters of a modeled hole.*
+View information for the selected geometry.
+Menu -> Information -> Object
+
+*Parameters such as part tolerances, hole diameters, and finish requirements.*
+Create a spreadsheet of all Product and Manufacturing Information (PMI) associated with the part or selected geometry.
+Menu -> Information -> PMI -> Report
+
+Find all PMI that reference the selected geometry.
+Menu -> Information -> PMI -> Find PMI Associated to Geometry
+
+*Inflections, variations, and defects on faces.*
+Analyze the curvature.
+Analysis tab -> Shape -> Radius
+
+*Pull directions for molds.*
+Analyze the surface normals.
+Analysis tab -> Shape -> Slope
+
+*Differences between two versions of the same part.*
+Compare the two bodies.
+Analysis tab -> Compare Body
+
+**Examine raw stock and part geometry using NC Assistant**
+
+This example shows how to use the NC Assistant command to guide you to determine required tool lengths.
+1- Open a file that contains the part geometry.
+2- Choose Application tab -> Manufacturing.
+3- Choose Home tab -> Analysis group -> NC Assistant.
+4- Orient your geometry to a view that allows you to select the faces to be analyzed.
+5- In the NC Assistant dialog box, in the Faces to Analyze group, Select Faces is active.
+6- Select the faces to be analyzed.
+7- In the Analysis Type group, from the Analysis Type list, select Levels. Because this option recognizes the depths of all planar levels in the part, it helps you to identify the correct length of the tools for machining the part.
+8- In the Reference Vector group, from the Specify Vector list, select ZC Axis.
+9- In the Reference Plane group, from the Specify Plane list, select Inferred.
+10- In the graphics window, select the face to be referenced as a plane that is equal to zero.
+11- In the Limits group, enter values for Minimum Level and Maximum Level: 
+Minimum Level = –3.75 
+Maximum Level = 0.0
+12- In the Tolerances group, enter values in the Distance and Angle boxes. These values set the tolerance range within which the software recognizes geometry.
+13- In the Actions group, click Analyze Geometry to display colors on the faces that were analyzed.
+14- In the Results group, select the Save Face Colors on Exit check box. This ensures that the analysis colors on the faces are saved with the part. This provides a visual cue of the results so that you do not have to repeat the analysis later.
+15- Click Information to view additional data on the faces that were analyzed.
+16- Click OK.
+
+**Creating a Manufacturing setup**
+
+The setup process creates a manufacturing assembly and adds data related to machining your part. With a setup you save the full machining environment. The setup:
+Is initialized from pre-defined setup parts (templates) in a CAM session.
+The template selected determines which operation types and subtypes are available.
+Stores all of your CAM data in a file. The setup can be in the same file as the part you are cutting, or in a separate assembly file.
+Consists of all operations, their resulting tool paths, and the environment in which the operations are created. This includes programs and parameters for tooling, geometry and cutting methods.
+Promotes standardization as it can be saved as a template and reused.
+
+The setup starts with a part model. The requirements vary with part complexity:
+Simple parts may not need additional geometry for programming purposes.
+You can add a setup to the part file to create a simple setup file. (non-assembly)
+More complex parts may need a fixture to add clarification.
+Create a setup assembly file that references the geometry to machine as a component. This is the recommended approach, and lets you add the blank, clamps, tooling, or other components as needed.
+Very complex parts may need machine tools and NX Machine Tool Simulation (NX MTS) as part of the setup. You may need to stop for inspections, heat treatments or other non-machining steps, to rotate the part to machine a different side, or move the part to a different machine.
+If necessary, you can create multiple setups for the different machining conditions.
+
+**Initializing the CAM setup**
+
+How you create the CAM setup depends on whether you are in a native NX or Teamcenter environment.
+
+In native NX, there are several ways to create the CAM setup for your part:
+Open the part to machine, then let the software create the setup assembly. This is the easiest and recommended approach.
+For more control over how the part is initially positioned in the assembly, open the part to machine and:
+Choose File tab -> New -> Model tab -> Assembly. Add the part to machine as a component and position it. Make the assembly the work part, then start Manufacturing.
+If the part does not require a setup assembly, you can create a setup in the file containing the part to machine.
+
+If you want to add the part to machine later, create an empty setup assembly. Either:
+Choose File tab -> New -> Manufacturing tab -> Blank.
+Choose File tab -> New -> Model tab -> Assembly, then start Manufacturing.
+
+After you initialize the setup:
+Rename or create additional programs to manage your operations (roughing vs. finishing).
+Retrieve tools from the library or create new tools.
+Define geometry (workpiece, MCS, boundaries).
+Use existing methods or create new ones.
+
+**Create a manufacturing setup assembly automatically**
+
+You can let NX create the manufacturing setup assembly for you.
+This procedure creates a new general setup assembly.
+
+1- Open the part that you want to machine.
+2- Choose File tab -> New.
+3- In the New dialog box, click the Manufacturing tab.
+4- In the Templates group, from the Units list, select the units for the NC output.
+5- From the Relationship list, select Reference Existing Part.
+6- From the Templates list, select General Setup. Other available setups include a set of express setups, and the Simulation Dual Table Sinumerik setup.
+7- In the Part to Reference group, click Browse .
+8- In the Select master part dialog box, from the Loaded Parts list, select the part to be machined and click OK. In the New dialog box, in the New File Name group, in the Name box, NX appends _setup_1 to the name of the part to be machined. You can also navigate to a part file by clicking Open.
+9- Click OK.
+
+NX does the following:
+Creates a CAM setup with:
+The NC_PROGRAM parent and a program node, for example 1234.
+The applicable Method parents, for example MILL_ROUGH, MILL_SEMI_FINISH, and so on.
+The Geometry parents, for example MCS_MILL and WORKPIECE.
+The GENERIC_MACHINE parent, and a CARRIER node with 30 pocket nodes.
+Adds the referenced part to the setup part as a component.
+You can add a blank, clamps, and other components as needed.
+
+**Create a manufacturing setup in the part file**
+
+1- Choose Application tab -> Manufacturing.
+2- In the Machining Environment dialog box, in the CAM Session Configuration group, select a configuration from the list.
+3- In the CAM Setup to Create group, select a setup from the list.
+4- Click OK.
+
+This procedure adds a setup to the part file.
+To create a setup assembly that references the part file and lets you add a blank, clamps and other components as needed, see Create a manufacturing setup assembly automatically.
+To change the configuration for an existing setup, see Set the machining environment configuration file.
+For details on the available configuration and setup options, see Available CAM session setups.
+
+**Delete a manufacturing setup**
+
+When you delete the manufacturing setup, the software removes all manufacturing setup data, operations, and groups from the part.
+1- Choose Menu -> Tools -> Operation Navigator -> Delete Setup.
+2- In the Setup Delete Confirmation box, click OK.
+3- In the Machining Environment dialog box, in the CAM Session Configuration group, select a configuration from the list.
+4- In the CAM Setup to Create group, select a setup from the list.
+5- Click OK.
+
+**CAM session configurations and setups**
+
+*Setup templates*
+CAM setup template part files appear in the CAM Setup to Create group of the Machining Environment dialog box and in the Type options list in the operation, tool, and geometry creation dialog boxes. The template files contain an MCS, workpiece, program, and one or more methods that let you create operations, tools, and geometry groups to machine different types of parts. Some setups let you create solid tools.
+Setup: Purpose
+mill_planar.prt: Drilling, rough milling, semi-finish milling and finish milling of planar parts.
+mill_contour.prt: Fixed axis contouring, drilling, rough, semi-finish, and finish milling of contoured parts.
+mill_multi-axis.prt: Fixed axis contouring, and variable axis contouring of contoured parts.
+mill_multi_blade.prt: Roughing and finishing multi-bladed parts, such as turbines.
+mill_rotary: Roughing and finishing the floors of cylindrical parts.
+drill.prt: Hole milling, thread milling, and legacy drilling.
+machining_knowledge.prt: Operations, tools, and groups used for drilling, spot facing, reaming, countersinking, counterboring, boring, cavity milling, face milling, and tapping. This contains a list of the operation subtypes that can be created with feature-based machining, the default program parents for the operation subtypes, and default machining methods.
+hole_making.prt: Hole milling, thread milling, and drilling of feature-based geometry. Includes optimized program groups, and feature geometry groups.
+turning.prt: Turning on a lathe.
+centerline.prt: Centerline drilling on a lathe.
+wire_edm.prt: Wire electric discharge machining (WEDM). Includes geometry groups for internal and external trim sequences.
+die_sequences.prt: Special machining sequences for die machining. A process assistant takes you through several steps each time you create a sequence. This ensures the system stores the required selections in the correct groups. This contains everything in mill_contour plus several tools and methods commonly used for die machining.
+mold_sequences.prt:Special machining sequences for mold machining. A process assistant takes you through several steps each time you create a sequence. This ensures the system stores the required selections in the correct groups. This contains everything in mill_contour, plus several tools and methods commonly used for mold machining.
+probing.prt: Probing of milling parts, turning parts, milling tools, and turning tools. Positioning the tools required for different applications, such as painting. Creating solid tools and probe tools.
+work_instruction.prt: Documentation for your programs.
+robot.prt: Positioning robots to perform applications such as polishing, riveting, or welding. Creating solid tools.
+multi_axis_deposition.prt: Depositing material using fixed-axis or multi-axis layering.
+
+**Set the machining environment configuration file**
+
+This procedure shows how to change the current setup to the mill contour configuration. You can select any valid file.
+1- Choose Menu -> Preferences -> Manufacturing.
+2- In the Manufacturing Preferences dialog box, click the Configuration tab.
+3- In the Configuration File group, click Browse.
+4- From the list, select cam_native_rm_library.dat from the file list, and click OK.
+5- Click OK to exit the Manufacturing Preferences dialog box.
+
+**Use a manufacturing palette to create a setup**
+
+You can use palettes to create setups, instead of selecting setups from the setup dialog.
+1- In the Manufacturing application, choose Menu -> Preferences -> Manufacturing.
+2- In the Manufacturing Preferences dialog box, click the User Interface tab.
+3- In the Palettes group, click Add Setup Palette .
+4- In the Library Class Selection dialog box, select either Inch or Metric. Do not mix units on a single palette. Create separate palettes for inch and metric parts.
+5- Click OK. The pallete now displays on the Resource bar.
+6- To use the palette, open the part to machine.
+7- Choose Application tab→Gateway  or Modeling .
+8- On the Resource bar, click the Manufacturing - Metric  or Manufacturing - Inch  tab.
+9- Select the picture in the palette that represents the setup you want to create. For example, mill_planar or mill_contour.
+
+**Delete a manufacturing palette**
+
+1- Choose Menu -> Preferences -> Palettes.
+2- In the Palettes dialog box, select the palette to delete.
+3- Click Close.

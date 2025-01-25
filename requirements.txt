@@ -1,0 +1,10 @@
+torch==2.0.1+cu118
+transformers
+pandas
+accelerate
+flash-attention
+numpy
+huggingface-hub
+einops
+pytest
+tiktoken
