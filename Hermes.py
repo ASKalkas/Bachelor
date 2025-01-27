@@ -119,3 +119,4 @@ with open('/app/result/output.txt', 'w') as file:
     file.write(response)
 
 print("Done, Time Taken:", time_taken)
+print("Tokens Generated:", generated_tokens.shape[0])
