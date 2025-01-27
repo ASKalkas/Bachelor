@@ -27,7 +27,7 @@ AutoModelForCausalLM.from_pretrained(
 )
 
 AutoTokenizer.from_pretrained(
-    "microsoft/Phi-3-mini-128k-instruct",
+    "microsoft/Phi-3.5-mini-instruct",
     trust_remote_code=True,
     local_files_only=False
 )

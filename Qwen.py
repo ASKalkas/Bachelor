@@ -42,10 +42,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 generation_kwargs = {
     "max_new_tokens": 1500,
-    # "temperature": 0.7,
-    # "do_sample": True,
-    # "top_p": 0.9,
-    # "top_k": 50,
+    "do_sample": False,
     "eos_token_id": Qwen_tokenizer.eos_token_id,
 }
 
