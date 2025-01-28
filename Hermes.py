@@ -33,7 +33,7 @@ documentation_text = file_content
 Hermes_model = AutoModelForCausalLM.from_pretrained(
     "NousResearch/Hermes-3-Llama-3.1-8B",
     device_map="auto",
-    torch_dtype="auto",
+    torch_dtype=torch.float16,
     local_files_only=True,
 
 )
