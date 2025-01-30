@@ -89,6 +89,25 @@ You are an experienced instructor specializing in {content["Topic"]}. Your goal 
 Please write the full course content, elaborating on each section with detailed explanations and instructions. Do not provide an outline. Begin now.
 """
 
+Text_no_template = f"""
+You are an experienced instructor specializing in {content["Topic"]}. Your goal is to **write** a short, {content["Level"]} course for {content["Audience"]} on how to {content["Task"]} using {content["Topic"]}.
+
+**Course Requirements:**
+
+- **Audience:** {content["Audience"]}.
+- **Style:** Clear, concise, and engaging language. Use step-by-step instructions.
+- **Formatting:** Provide detailed explanations, examples, and practical exercises where appropriate. Avoid creating just an outline.
+- **Length:** {content["Length"]}.
+
+**Use the following documentation to ensure the information is accurate and comprehensive.
+
+**Documentation:**
+
+{documentation_text}
+
+Please write the full course content, elaborating on each section with detailed explanations and instructions. Do not provide an outline. Begin now.
+"""
+
 # Tokenize the input text
 inputs = Phi_tokenizer(Text, return_tensors='pt').to(device)
 input_ids = inputs['input_ids']
